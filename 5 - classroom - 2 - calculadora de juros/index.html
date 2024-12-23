@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IVA</h1>
+        <form id="vatCalculator">
+            <div class="section">
+                <label>O que você quer calcular?</label>
+                <div class="disp">
+                    <input class="marg" type="radio" id="nettoZuBrutto" name="calculationType" value="nettoZuBrutto">
+                    <label class="texto" for="nettoZuBrutto">Adicionar IVA (Líquido para Bruto)</label>
+                </div>
+                <div class="disp">
+                    <input class="marg" type="radio" id="bruttoZuNetto" name="calculationType" value="bruttoZuNetto">
+                    <label class="texto" for="bruttoZuNetto">Remover IVA (Bruto para Líquido)</label>
+                </div>
+            </div>
+            <div class="section">
+                <label>Taxa de IVA</label>
+                <div class="disp">
+                    <input class="marg" type="radio" id="vat19" name="vatRate" value="19">
+                    <label class="texto" for="vat19">19%</label>
+                </div>
+                <div class="disp">
+                    <input class="marg" type="radio" id="vat7" name="vatRate" value="7">
+                    <label class="texto" for="vat7">7%</label>
+                </div>
+            </div>
+            <div class="section">
+                <label for="netAmount">Valor líquido (sem IVA) em euros*</label>
+                <input class="lala" type="number" id="netAmount" name="netAmount" step="0.05" placeholder="0,00" required>
+            </div>
+            <button type="button" id="calc-button">Calcular</button>
+        </form>
+        <div class="results">
+            <h2>Resultado</h2>
+            <p>Valor do IVA: <span id="vatAmount">€</span></p>
+            <p>Valor bruto (preço final): <span id="grossAmount">€</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
